@@ -1,19 +1,12 @@
 import { Router } from "express";
+import * as mainController from "../controllers/pageController";
 
 const router = Router();
 
-router.get('/', (req, res)=>{
-    res.send('Seja bem vindo a Pagina inicial');
-});
-router.get('/dogs', (req, res)=>{
-    res.send('Seja bem vindo a Pagina dos cachorros');
-});
-router.get('/cats', (req, res)=>{
-    res.send('Seja bem vindo a Pagina dos gatos');
-});
-router.get('/fishes', (req, res)=>{
-    res.send('Seja bem vindo a Pagina dos peixes');
-});
+router.get('/', mainController.home);
+router.get('/dogs', mainController.dogs);
+router.get('/cats', mainController.cats);
+router.get('/fishes', mainController.fishes);
 router.get('/search', (req, res)=>{
     res.send('Seja bem vindo a Pagina de Pesquisa');
 });

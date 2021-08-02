@@ -20,7 +20,7 @@ server.use(express.static(path.join(__dirname, '../public')));
 //Estabelecendo as rotas
 server.use(mainRouter);
 server.use((req:Request, res:Response) =>{
-   res.status(404).send('Pagina não encontrada!'); 
+   res.status(404).render('pages/404'); 
 });
 
 //Criando o servidor na porta estabelecida no arquivo .env

@@ -8,4 +8,4 @@ Projeto realizado no módulo do curso Node + TypeScript. DevCanil consiste em um
 `npm install`
 
 ### Para rodar o projeto
-`npm run start`
+`npm run start-dev`

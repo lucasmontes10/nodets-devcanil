@@ -19,3 +19,21 @@ export const search = (req:Request, res:Response) =>{
         query
     });
 } 
+
+//Disponibilizando através do método post
+export const searchPost = (req: Request, res:Response) => {
+    let query: string = req.body.q;
+    
+    if (!query){
+        res.redirect('/');
+        return;
+    }
+
+    let list = petModels.getSearch(query);
+
+    res.render('pages/pages', {
+        menu: menuController(''),
+        list,
+        query
+    })
+};

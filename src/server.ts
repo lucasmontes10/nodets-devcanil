@@ -17,6 +17,9 @@ server.engine('mustache', mustache());
 //Tornando a pasta public como estática para ser acessada na url
 server.use(express.static(path.join(__dirname, '../public')));
 
+//Tornando viavel o metodo Post
+server.use(express.urlencoded({extended:true}));
+
 //Estabelecendo as rotas
 server.use(mainRouter);
 server.use((req:Request, res:Response) =>{
